@@ -1,0 +1,34 @@
+* {
+  font-size: 16px;
+}
+
+body {
+  margin: 2rem;
+}
+
+.container {
+  height: 100vh;
+  border: 3px solid #d3d3d3;
+  grid-template: "header header" 100px
+                 "sidebar main"
+                 ". footer" 100px
+                 / 30fr 70fr;
+  gap: 10px;
+  display: grid;
+}
+
+.box {
+  color: #fff;
+  background: #639;
+}
+
+.box-one {
+  grid-area: header;
+}
+
+.box-four {
+  background: red;
+  grid-area: footer;
+}
+
+/*# sourceMappingURL=resume.83397d20.css.map */

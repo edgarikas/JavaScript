@@ -1,0 +1,370 @@
+.rectangle1 {
+  max-width: 63rem;
+  text-align: center;
+  background: #7abcac;
+  margin: 5px auto 0;
+  padding: 22px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.rectangle2 {
+  width: 586px;
+  border: 4px solid #000;
+  margin: 0 auto;
+  padding: 44px;
+}
+
+#workType {
+  width: 15rem;
+  height: 1.75rem;
+  color: #fff;
+  text-align: center;
+  background: #000;
+  margin: 0 auto;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+h1 {
+  width: 359px;
+  height: 56px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.content-section__title {
+  text-transform: uppercase;
+  padding-bottom: 15px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+.hr {
+  max-width: 65rem;
+  height: 4px;
+  background: #d3d3d3;
+  margin-top: -6px;
+  margin-bottom: 10px;
+  margin-left: 72px;
+}
+
+.hr1 {
+  height: 10px;
+  width: 72px;
+  background: #7abcac;
+}
+
+.hr3 {
+  height: 4px;
+  background: #d3d3d3;
+}
+
+img {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin-right: 15px;
+  padding-top: 2px;
+  line-height: 20px;
+}
+
+#titleE {
+  padding-top: 20px;
+  font-weight: bold;
+}
+
+.min {
+  width: 201px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 0;
+}
+
+.skills {
+  text-transform: uppercase;
+  margin-top: 2rem;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 12px;
+  padding-top: .1rem;
+}
+
+.blue {
+  text-align: center;
+  width: 110px;
+  height: 20px;
+  background-color: #7abc;
+  border-radius: 11px;
+}
+
+.smallestYellow {
+  text-align: center;
+  width: 120px;
+  height: 20px;
+  background-color: #d8da79;
+  border-radius: 11px;
+}
+
+.yellow {
+  text-align: center;
+  width: 154px;
+  height: 20px;
+  background-color: #d8da79;
+  border-radius: 11px;
+}
+
+.brown {
+  text-align: center;
+  width: 137px;
+  height: 20px;
+  background-color: #c29486;
+  border-radius: 11px;
+}
+
+.lightGreen {
+  text-align: center;
+  width: 100px;
+  height: 20px;
+  background-color: #14c9a8;
+  border-radius: 11px;
+}
+
+.jobs {
+  text-align: left;
+}
+
+ul {
+  width: 15rem;
+  padding-left: 1rem;
+  list-style: disc;
+}
+
+.list {
+  margin-top: 1rem;
+  margin-left: 0;
+}
+
+.jTitle {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.contacts {
+  max-width: 65rem;
+  margin: 0 auto 0 5rem;
+  padding-top: 30px;
+}
+
+ul1 {
+  list-style: none;
+}
+
+.spacing {
+  width: 150px;
+  margin-top: 12px;
+  margin-left: 2.5rem;
+}
+
+.spacingC {
+  width: 150px;
+  text-align: center;
+  margin-top: 12px;
+  margin-left: 4.4rem;
+}
+
+.spacingS {
+  width: 520px;
+  text-align: center;
+  margin-top: 12px;
+  margin-left: 1rem;
+}
+
+.container {
+  grid-template-rows: repeat(11, 200px);
+  grid-template-columns: repeat(3, 200px);
+  justify-content: center;
+  align-items: center;
+  display: grid;
+}
+
+.box {
+  max-width: 65rem;
+  align-items: flex-start;
+  margin: 1rem;
+}
+
+.aboutMe, .content-section__aboutMe {
+  max-width: 65rem;
+  grid-area: 1 / 1 / span 1 / span 3;
+  margin-top: 10rem;
+}
+
+.content-section__links, .links {
+  max-width: 65rem;
+  grid-area: 2 / 1 / span 2 / span 3;
+  margin-top: 6rem;
+}
+
+.content-section__education, .education {
+  grid-area: 3 / 1 / span 3 / span 1;
+  margin-top: 5rem;
+}
+
+.content-section__personalSkills, .personalSkills {
+  width: 14rem;
+  grid-area: 3 / 2 / span 3 / span 2;
+  margin-top: .5rem;
+  margin-left: 5rem;
+}
+
+.content-section__tSkills, .tSkills {
+  grid-area: 4 / 1 / span 4 / span 3;
+  margin-top: 5rem;
+}
+
+.wExperienceTitle {
+  width: 570px;
+  grid-area: 1 / 6 / span 3 / span 6;
+}
+
+.content-section__wExperience, .wExperience {
+  width: 250px;
+  grid-area: 5 / 1 / span 6 / span 1;
+  margin-top: 5rem;
+}
+
+.content-section__wExperience2, .wExperience2 {
+  width: 250px;
+  grid-area: 5 / 3 / span 6 / span 3;
+  margin-top: 7rem;
+  margin-left: -2rem;
+}
+
+.content-section__wExperience3, .wExperience3 {
+  grid-area: 6 / 1 / span 6 / span 3;
+  margin-top: 20rem;
+}
+
+.content-section__adress, .adress {
+  text-align: center;
+  grid-area: 10 / 1 / span 10 / span 1;
+}
+
+.footerline {
+  grid-area: 9 / 1 / span 9 / span 3;
+}
+
+.content-section__contacts {
+  grid-area: 10 / 2 / span 10 / span 3;
+  margin-top: .8rem;
+  margin-left: 7rem;
+}
+
+.contacts {
+  grid-area: 10 / 2 / span 10 / span 3;
+  margin-top: -1rem;
+  margin-left: 7rem;
+}
+
+.content-section__social, .social {
+  width: 550px;
+  grid-area: 11 / 1 / span 11 / span 3;
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .links, .content-section__links {
+    grid-area: 1 / 1 / span 1 / span 2;
+    margin-top: 10rem;
+    margin-left: 5rem;
+  }
+
+  .content-section__aboutMe, .aboutMe {
+    width: 45rem;
+    grid-area: 1 / 2 / span 1 / span 3;
+    margin-left: 16rem;
+  }
+
+  .content-section__education, .education {
+    width: 300px;
+    margin-bottom: 20rem;
+    margin-left: 5rem;
+  }
+
+  .content-section__personalSkills, .personalSkills {
+    width: 300px;
+    margin-bottom: 20rem;
+    margin-left: 17rem;
+  }
+
+  .content-section__tSkills, .tSkills {
+    width: 300px;
+    grid-area: 3 / 3 / span 3 / span 3;
+    margin-top: .4rem;
+    margin-bottom: 20rem;
+    margin-left: 30rem;
+  }
+
+  .content-section__wExperience3, .wExperience3 {
+    width: 300px;
+    grid-area: 5 / 4 / span 5 / span 5;
+    margin-bottom: 62rem;
+    margin-left: 16rem;
+  }
+
+  .content-section__wExperience2, .wExperience2 {
+    width: 300px;
+    margin-bottom: 62rem;
+    margin-left: 2.5rem;
+  }
+
+  .content-section__wExperience, .wExperience {
+    width: 300px;
+    margin-bottom: 60rem;
+    margin-left: 5rem;
+  }
+
+  .lineW {
+    width: 1200px;
+  }
+
+  .footerline {
+    width: 1110px;
+    grid-area: 5 / 1 / span 5 / span 3;
+    margin-left: 4.5rem;
+  }
+
+  .content-section__adress, .adress {
+    grid-area: 6 / 1 / span 6 / span 1;
+    margin-bottom: 30rem;
+    margin-left: 5rem;
+  }
+
+  .content-section__contacts, .contacts {
+    grid-area: 6 / 2 / span 6 / span 2;
+    margin-bottom: 30rem;
+    margin-left: 18rem;
+  }
+
+  .content-section__social, .social {
+    grid-area: 6 / 4 / span 6 / span 4;
+    margin-bottom: 31.5rem;
+    margin-left: 9rem;
+  }
+
+  .spacingC {
+    margin-left: 3rem;
+  }
+}
+
+/*# sourceMappingURL=CV-With-Grid-copy.9a9d2abc.css.map */
