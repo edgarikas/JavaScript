@@ -1,0 +1,61 @@
+html {
+  font-size: 62.5%;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.box {
+  background: #add8e6;
+  margin: 2rem 1rem;
+  font-size: 1.8rem;
+}
+
+.btnBuy {
+  cursor: pointer;
+  color: #fff;
+  background: #8b0000;
+  border: 3px solid #8b0000;
+  margin-top: 1rem;
+}
+
+.btnBuy:hover {
+  color: #000;
+  background: #add8e6;
+}
+
+.findUs:after {
+  content: " --->";
+}
+
+img {
+  width: 4rem;
+}
+
+.grand {
+  width: 160px;
+  height: 160px;
+  background: red;
+  margin: 1rem 15rem;
+}
+
+.parent {
+  width: 120px;
+  height: 120px;
+  background: green;
+}
+
+.child {
+  width: 80px;
+  height: 80px;
+  background: #000;
+}
+
+/*# sourceMappingURL=index.38ec9247.css.map */
