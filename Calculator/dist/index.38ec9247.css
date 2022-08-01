@@ -1,46 +1,20 @@
-html {
-  font-size: 62.5%;
+.container {
+  max-width: 400px;
+  height: 200px;
+  background: #d3d3d3;
+  margin: 0 auto;
 }
 
-h1 {
-  font-size: 2.8rem;
-  font-weight: 600;
-}
-
-h2 {
-  font-size: 2.2rem;
-  font-weight: 600;
-}
-
-.box {
-  background: #add8e6;
-  margin: 2rem 1rem;
-  font-size: 1.8rem;
-}
-
-.btnBuy {
-  cursor: pointer;
-  color: #fff;
-  background: #8b0000;
-  border: 3px solid #8b0000;
+.inputs {
   margin-top: 1rem;
 }
 
-.btnBuy:hover {
-  color: #000;
-  background: #add8e6;
+.buttons {
+  margin: 1rem 0;
 }
 
-.findUs:after {
-  content: " --->";
-}
-
-img {
-  width: 4rem;
-}
-
-a {
-  color: #00f;
+.result {
+  background-color: wheat;
 }
 
 /*# sourceMappingURL=index.38ec9247.css.map */
