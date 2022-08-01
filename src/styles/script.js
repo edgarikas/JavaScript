@@ -1,3 +1,5 @@
+/*  --Selectors && Events--  */
+
 /* Change Theme */
 document.addEventListener("keydown", (event) => {
   if (event.key === "c") {
@@ -67,3 +69,11 @@ document.addEventListener("keyup", (event) => {
     clickOnMe = false;
   }
 });
+
+/*  --Functions--  */
+function sum(nr1, nr2) {
+  const r = nr1 + nr2;
+  return r;
+}
+
+console.dir(sum(11, 4));

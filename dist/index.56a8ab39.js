@@ -1,4 +1,4 @@
-/* Change Theme */ document.addEventListener("keydown", (event)=>{
+/*  --Selectors && Events--  */ /* Change Theme */ document.addEventListener("keydown", (event)=>{
     if (event.key === "c") {
         const body = document.querySelector("body");
         const box = document.querySelectorAll(".box");
@@ -57,5 +57,10 @@ document.addEventListener("keyup", (event)=>{
     console.log(event);
     if (event.key == "Shift") clickOnMe = false;
 });
+/*  --Functions--  */ function sum(nr1, nr2) {
+    const r = nr1 + nr2;
+    return r;
+}
+console.dir(sum(11, 4));
 
 //# sourceMappingURL=index.56a8ab39.js.map
