@@ -7,7 +7,7 @@
     "dev": "parcel ./src/index.html"
   },
   "keywords": [],
-  "author": "Mindaugas Jačionis",
+  "author": "Edgar Martynenko",
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.2",

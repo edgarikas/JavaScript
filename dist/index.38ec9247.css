@@ -39,23 +39,8 @@ img {
   width: 4rem;
 }
 
-.grand {
-  width: 160px;
-  height: 160px;
-  background: red;
-  margin: 1rem 15rem;
-}
-
-.parent {
-  width: 120px;
-  height: 120px;
-  background: green;
-}
-
-.child {
-  width: 80px;
-  height: 80px;
-  background: #000;
+a {
+  color: #00f;
 }
 
 /*# sourceMappingURL=index.38ec9247.css.map */
