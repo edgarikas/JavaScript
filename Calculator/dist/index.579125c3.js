@@ -35,16 +35,16 @@ sum.addEventListener("click", (e)=>{
     result.textContent = suma(nr1.value, nr2.value);
 });
 minus.addEventListener("click", (e)=>{
-    result.textContent = String(minusF(nr1.value, nr2.value));
+    result.textContent = minusF(nr1.value, nr2.value);
 });
 div.addEventListener("click", (e)=>{
-    result.textContent = String(divide(nr1.value, nr2.value));
+    result.textContent = divide(nr1.value, nr2.value);
 });
 multiple.addEventListener("click", (e)=>{
-    result.textContent = String(mul(nr1.value, nr2.value));
+    result.textContent = mul(nr1.value, nr2.value);
 });
 mod.addEventListener("click", (e)=>{
-    result.textContent = String(modul(nr1.value, nr2.value));
+    result.textContent = modul(nr1.value, nr2.value);
 });
 clear.addEventListener("click", (e)=>{
     inputs.forEach((input)=>input.value = "");
