@@ -38,7 +38,7 @@ function modul(nr1, nr2) {
 }
 
 //Events
-
+/*
 sum.addEventListener("click", (e) => {
   console.log(nr1.value);
   result.textContent = suma(nr1.value, nr2.value);
@@ -63,4 +63,44 @@ mod.addEventListener("click", (e) => {
 clear.addEventListener("click", (e) => {
   inputs.forEach((input) => (input.value = ""));
   result.textContent = "";
+});
+*/
+
+//Switch
+
+document.addEventListener("click", (e) => {
+  switch (e.target.innerText) {
+    case "+":
+      sum.addEventListener("click", (e) => {
+        console.log(nr1.value);
+        result.textContent = suma(nr1.value, nr2.value);
+      });
+      break;
+    case "-":
+      minus.addEventListener("click", (e) => {
+        result.textContent = minusF(nr1.value, nr2.value);
+      });
+      break;
+    case "/":
+      div.addEventListener("click", (e) => {
+        result.textContent = divide(nr1.value, nr2.value);
+      });
+      break;
+    case "*":
+      multiple.addEventListener("click", (e) => {
+        result.textContent = mul(nr1.value, nr2.value);
+      });
+      break;
+    case "%":
+      mod.addEventListener("click", (e) => {
+        result.textContent = modul(nr1.value, nr2.value);
+      });
+      break;
+    case "C":
+      clear.addEventListener("click", (e) => {
+        inputs.forEach((input) => (input.value = ""));
+        result.textContent = "";
+      });
+      break;
+  }
 });
