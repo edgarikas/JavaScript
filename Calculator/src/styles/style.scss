@@ -1,8 +1,13 @@
+html {
+  font-size: 10px;
+}
+
 .container {
   max-width: 400px;
-  height: 200px;
-  background: lightgray;
-  margin: 0 auto;
+  margin: 10vh auto 0 auto;
+  box-shadow: 0px 0px 40px 13px rgba(255, 132, 0, 0.4);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.81);
 }
 
 .inputs {
@@ -10,9 +15,38 @@
 }
 
 .buttons {
-  margin: 1rem 0rem;
+  margin: 1rem 1.5rem;
+  text-align: center;
+}
+
+.btn {
+  text-align: center;
+  background: transparent;
+  margin-top: 1rem;
+  width: 6.5rem;
+  border-bottom: 1px solid #999;
+  border-left: 1px solid #999;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background: #323330;
+  color: white;
+  transition: 0.4s ease-in-out;
+}
+h1 {
+  font-size: 2.1rem;
+  padding: 1rem 1rem;
+  font-weight: bold;
+  background-color: rgba(255, 132, 0, 0.708);
 }
 
 .result {
-  background-color: wheat;
+  height: 30px;
+  padding-top: 1rem;
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  background-color: rgba(255, 132, 0, 0.708);
 }

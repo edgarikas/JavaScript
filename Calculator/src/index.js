@@ -1,3 +1,5 @@
+// Variables
+
 let sum = document.querySelector("#sum");
 let minus = document.querySelector("#minus");
 let div = document.querySelector("#div");
@@ -66,15 +68,13 @@ clear.addEventListener("click", (e) => {
 });
 */
 
-//Switch
+// Switch
 
 document.addEventListener("click", (e) => {
   switch (e.target.innerText) {
     case "+":
-      sum.addEventListener("click", (e) => {
-        console.log(nr1.value);
-        result.textContent = suma(nr1.value, nr2.value);
-      });
+      result.textContent = suma(nr1.value, nr2.value);
+      console.log(e.target.innerText);
       break;
     case "-":
       minus.addEventListener("click", (e) => {
@@ -82,24 +82,19 @@ document.addEventListener("click", (e) => {
       });
       break;
     case "/":
-      div.addEventListener("click", (e) => {
-        result.textContent = divide(nr1.value, nr2.value);
-      });
+      result.textContent = divide(nr1.value, nr2.value);
       break;
     case "*":
-      multiple.addEventListener("click", (e) => {
-        result.textContent = mul(nr1.value, nr2.value);
-      });
+      result.textContent = mul(nr1.value, nr2.value);
       break;
     case "%":
-      mod.addEventListener("click", (e) => {
-        result.textContent = modul(nr1.value, nr2.value);
-      });
+      result.textContent = modul(nr1.value, nr2.value);
       break;
     case "C":
       clear.addEventListener("click", (e) => {
         inputs.forEach((input) => (input.value = ""));
         result.textContent = "";
+        alert("All Text Deleted!");
       });
       break;
   }
