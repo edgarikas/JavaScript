@@ -1,0 +1,15 @@
+html {
+  font-family: monospace;
+  font-size: 10px;
+}
+
+body {
+  font-size: 3rem;
+}
+.container {
+  margin: 1rem 1rem;
+}
+
+.r {
+  margin-top: 5rem;
+}
