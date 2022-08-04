@@ -67,7 +67,7 @@ function reverseP(rows) {
 function rombas(rows) {
   textToString = "";
   result.innerHTML = "";
-  for (var i = 1; i <= rows; i++) {
+  for (var i = 1; i <= rows - 1; i++) {
     for (var k = 1; k <= rows - i; k++) {
       textToString += "&nbsp";
     }
