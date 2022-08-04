@@ -14,7 +14,7 @@ body {
 
 .r {
   margin-top: 3rem;
-  height: 50vh;
+  max-height: 50vh;
   max-width: 50rem;
   padding: 10rem 16rem;
   background: darkblue;
