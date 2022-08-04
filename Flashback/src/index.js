@@ -13,9 +13,12 @@ let textToString = "";
 //Triangle
 
 function triangleF(rows) {
+  textToString = "";
+  result.innerHTML = "";
   for (var i = 1; i <= rows; i++) {
     for (var j = 1; j <= i; j++) {
       textToString += "*";
+      textToString += "&nbsp";
     }
     textToString += "<br/>";
   }
@@ -24,6 +27,8 @@ function triangleF(rows) {
 
 //Pyramid
 function pyramidF(rows) {
+  textToString = "";
+  result.innerHTML = "";
   for (var i = 1; i <= rows; i++) {
     for (var k = 1; k <= rows - i; k++) {
       textToString += "&nbsp";
@@ -43,14 +48,17 @@ function pyramidF(rows) {
 //Reverse Pyramid
 
 function reverseP(rows) {
+  textToString = "";
+  result.innerHTML = "";
   for (var i = rows; i >= 1; i--) {
     for (var j = i; j >= 1; j--) {
-      document.write("1");
-      document.write("*");
+      textToString += "*";
+      textToString += "&nbsp";
     }
 
-    document.write("<br/>");
+    textToString += "<br/>";
   }
+
   result.innerHTML = textToString;
 }
 
@@ -59,19 +67,19 @@ function reverseP(rows) {
 document.addEventListener("click", (e) => {
   console.dir(e.target);
   switch (e.target.className) {
-    case "triangle":
+    case "triangle btn":
       console.log("HI");
       triangleF(rows);
       break;
-    case "pyramid":
+    case "pyramid btn":
       console.log("HI");
       pyramidF(rows);
       break;
-    case "reversePyramid":
+    case "reversePyramid btn":
       console.log("HI");
       reverseP(rows);
       break;
-    case "clear":
+    case "clear btn":
       console.log("HI");
       textToString = "";
       result.innerHTML = "";
