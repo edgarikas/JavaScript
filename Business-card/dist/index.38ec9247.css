@@ -1,55 +1,75 @@
 html {
-  font-size: 10px;
+  font-size: 62.5%;
 }
 
-.container {
-  max-width: 400px;
-  text-align: center;
-  background: #ffffffcf;
-  margin: 10vh auto 0;
-  box-shadow: 0 0 40px 13px #ff840066;
+body {
+  background: #2f4f4f;
 }
 
-.inputs {
-  margin-top: 1rem;
-}
-
-.buttons {
-  text-align: center;
-  margin: 1rem 1.5rem;
-}
-
-.btn {
-  text-align: center;
-  width: 6.5rem;
-  background: none;
-  border-bottom: 1px solid #999;
-  border-left: 1px solid #999;
-  margin-top: 1rem;
-  font-size: 1.6rem;
-  font-weight: 500;
-}
-
-.btn:hover {
-  color: #fff;
-  background: #323330;
-  transition: all .4s ease-in-out;
+input {
+  margin-bottom: 1rem;
 }
 
 h1 {
-  background-color: #ff8400b5;
-  padding: 1rem;
-  font-size: 2.1rem;
-  font-weight: bold;
+  font-size: 7rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 1.8rem;
+  }
+
+  h1 {
+    font-size: 8rem;
+  }
+
+  h2 {
+    font-size: 4rem;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+  }
+
+  .btn {
+    font-size: 1.8rem;
+  }
+}
+
+.container {
+  max-width: 70rem;
+  color: #fff;
+  text-align: left;
+  background: #00008b;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 10vh auto 0;
+  line-height: 1.5;
+  display: grid;
+}
+
+.data {
+  justify-self: center;
+  padding: 2rem 2.5rem;
+}
+
+.btn {
+  border-radius: 40px;
+  margin-top: 2.5rem;
+  padding: 1rem 4rem;
+  font-size: 1.6rem;
 }
 
 .result {
-  height: 30px;
-  background-color: #ff8400b5;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  font-size: 1.8rem;
-  font-weight: bold;
+  border-left: 3px solid #f90e;
+  padding: 3rem 2.5rem;
 }
 
 /*# sourceMappingURL=index.38ec9247.css.map */
