@@ -45,7 +45,7 @@ h3 {
 }
 
 .container {
-  max-width: 70rem;
+  max-width: 80rem;
   color: #fff;
   text-align: left;
   background: #00008b;
@@ -61,6 +61,8 @@ h3 {
 }
 
 .btn {
+  cursor: pointer;
+  background: wheat;
   border-radius: 40px;
   margin-top: 2.5rem;
   padding: 1rem 4rem;
@@ -70,6 +72,22 @@ h3 {
 .result {
   border-left: 3px solid #f90e;
   padding: 3rem 2.5rem;
+}
+
+.result > img {
+  width: 100px;
+  margin-top: 6rem;
+}
+
+.card {
+  height: 20rem;
+  width: 45rem;
+  border: 3px solid #fff;
+}
+
+.card > img {
+  border-radius: 100%;
+  margin-left: 1rem;
 }
 
 /*# sourceMappingURL=index.38ec9247.css.map */

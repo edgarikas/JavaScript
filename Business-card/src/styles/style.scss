@@ -51,7 +51,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 10vh auto 0 auto;
-  max-width: 70rem;
+  max-width: 80rem;
   background: $color-primry;
   color: white;
   text-align: left;
@@ -68,9 +68,27 @@ h3 {
   font-size: 1.6rem;
   border-radius: 40px;
   margin-top: 2.5rem;
+  background: wheat;
+  cursor: pointer;
 }
 
 .result {
   padding: 3rem 2.5rem;
   border-left: 3px solid rgba(255, 153, 0, 0.934);
+}
+
+.result > img {
+  width: 100px;
+  margin-top: 6rem;
+}
+
+.card {
+  border: 3px solid white;
+  height: 20rem;
+  width: 45rem;
+}
+
+.card > img {
+  margin-left: 1rem;
+  border-radius: 100%;
 }
