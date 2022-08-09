@@ -9,8 +9,8 @@ body {
   background: $color-body;
 }
 
-input {
-  margin-bottom: 1rem;
+::placeholder {
+  color: #cdcdb7;
 }
 
 h1 {
@@ -25,9 +25,17 @@ h3 {
   font-size: 3rem;
 }
 
+p {
+  font-size: 2rem;
+}
+
 @media screen and (min-width: 1024px) {
   body {
     font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1.6rem;
   }
 
   h1 {
@@ -47,15 +55,22 @@ h3 {
   }
 }
 
+input {
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  width: 20rem;
+}
+
 .container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin: 10vh auto 0 auto;
-  max-width: 80rem;
   background: $color-primry;
   color: white;
-  text-align: left;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   line-height: 1.5;
+  margin: 10vh auto 0 auto;
+  max-width: 90rem;
+  text-align: left;
 }
 
 .data {
@@ -64,17 +79,23 @@ h3 {
 }
 
 .btn {
-  padding: 1rem 4rem;
-  font-size: 1.6rem;
-  border-radius: 40px;
-  margin-top: 2.5rem;
   background: wheat;
+  border-radius: 40px;
   cursor: pointer;
+  font-size: 1.6rem;
+  margin-top: 2.5rem;
+  margin: 1rem 3rem;
+  padding: 1rem 4rem;
+}
+
+.btn::after {
+  content: "   >";
 }
 
 .result {
   padding: 3rem 2.5rem;
   border-left: 3px solid rgba(255, 153, 0, 0.934);
+  //align-self: center;
 }
 
 .result > img {
@@ -84,11 +105,22 @@ h3 {
 
 .card {
   border: 3px solid white;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   height: 20rem;
   width: 45rem;
 }
 
-.card > img {
-  margin-left: 1rem;
+.cardL {
+  text-align: center;
+  align-self: center;
+}
+
+.cardR {
+  text-align: center;
+  align-self: center;
+}
+
+.cardL > img {
   border-radius: 100%;
 }

@@ -6,8 +6,8 @@ body {
   background: #2f4f4f;
 }
 
-input {
-  margin-bottom: 1rem;
+::placeholder {
+  color: #cdcdb7;
 }
 
 h1 {
@@ -22,9 +22,17 @@ h3 {
   font-size: 3rem;
 }
 
+p {
+  font-size: 2rem;
+}
+
 @media screen and (min-width: 1024px) {
   body {
     font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1.6rem;
   }
 
   h1 {
@@ -44,9 +52,16 @@ h3 {
   }
 }
 
+input {
+  width: 20rem;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  padding: .75rem 1rem;
+}
+
 .container {
-  max-width: 80rem;
   color: #fff;
+  max-width: 90rem;
   text-align: left;
   background: #00008b;
   grid-template-columns: repeat(2, 1fr);
@@ -64,9 +79,13 @@ h3 {
   cursor: pointer;
   background: wheat;
   border-radius: 40px;
-  margin-top: 2.5rem;
+  margin: 1rem 3rem;
   padding: 1rem 4rem;
   font-size: 1.6rem;
+}
+
+.btn:after {
+  content: "   >";
 }
 
 .result {
@@ -83,11 +102,17 @@ h3 {
   height: 20rem;
   width: 45rem;
   border: 3px solid #fff;
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
 }
 
-.card > img {
+.cardL, .cardR {
+  text-align: center;
+  align-self: center;
+}
+
+.cardL > img {
   border-radius: 100%;
-  margin-left: 1rem;
 }
 
 /*# sourceMappingURL=index.38ec9247.css.map */
