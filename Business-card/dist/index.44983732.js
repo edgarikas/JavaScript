@@ -1,68 +1,92 @@
-const result = document.querySelector(".result");
 const btn = document.querySelector("btn");
+const cardL = document.querySelector(".cardL");
+const cardR = document.querySelector(".cardR");
+let inputs = document.querySelectorAll("input");
 const name = document.querySelector(".input--fullname");
 const email = document.querySelector(".input--email");
 const phone = document.querySelector(".input--phone");
 const adress = document.querySelector(".input--adress");
 const services = document.querySelector(".input--services");
-const cardL = document.querySelector(".cardL");
-const cardR = document.querySelector(".cardR");
-const person = [
-    name.value,
-    email.value,
-    phone.value,
-    services.value
+const clearCart = document.querySelector(".btn--result");
+let data = [
+    JSON.parse(window.localStorage.getItem("BusinessCart"))
 ];
-let authToken;
-let i = "";
-function getUserInfo() {
-    person.forEach((v)=>{
-        console.log(v);
+let r = [];
+let transferData = "";
+let cycle = 0;
+let check = false;
+let getI;
+function generateCart() {
+    cycle = 0;
+    inputs.forEach((e)=>{
+        data[cycle] = e.value;
+        if (cycle === 0 || cycle === 4) {
+            transferData = document.createElement("p");
+            transferData.textContent = e.value;
+            cardL.append(transferData);
+        } else if (cycle >= 2 || cycle == 1) {
+            transferData = document.createElement("p");
+            transferData.textContent = e.value;
+            cardR.append(transferData);
+        }
+        cycle += 1;
     });
+    window.localStorage.setItem("BusinessCart", JSON.stringify(data));
+// console.log("data = ", data);
 }
-function clearData() {
-    name.value = "";
-    email.value = "";
-    phone.value = "";
-    adress.value = "";
-    services.value = "";
+function generateImage() {
+    let img = document.createElement("img");
+    img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKfZS7sKX1MJ7WClhNt2EwP12GbFzpc-09wYP1_VPknMkG1v3JWS9o_WEBAlj0CrrqIy0&usqp=CAU";
+    img.width = 100;
+    img.style.marginTop = "1rem";
+    cardL.append(img);
 }
-document.addEventListener("click", (e)=>{
-    // console.dir(e.target.className);
-    if (e.target.className === "btn") {
-        getUserInfo();
+function getDataFromStorage() {
+    cardL.textContent = "";
+    cardR.textContent = "";
+    getI = JSON.parse(window.localStorage.getItem("BusinessCart"));
+    console.log("getI =  ", getI);
+    if (getI) generateImage();
+    for(let i = 0; i < 5; i++)r[i] = "";
+    if (getI) for(let i1 = 0; i1 < 5; i1++)r[i1] = getI[i1];
+    name.value = r[0];
+    email.value = r[1];
+    phone.value = r[2];
+    adress.value = r[3];
+    services.value = r[4];
+    const nameTransfer = document.createElement("p");
+    nameTransfer.textContent = name.value;
+    const servicesTransfer = document.createElement("p");
+    servicesTransfer.textContent = services.value;
+    const emailTransfer = document.createElement("p");
+    emailTransfer.textContent = email.value;
+    const adressTransfer = document.createElement("p");
+    adressTransfer.textContent = adress.value;
+    const phoneTransfer = document.createElement("p");
+    phoneTransfer.textContent = phone.value;
+    cardL.append(nameTransfer, servicesTransfer);
+    cardR.append(emailTransfer, phoneTransfer, adressTransfer);
+//Generate cart
+}
+getDataFromStorage();
+document.addEventListener("click", (e1)=>{
+    if (e1.target.className == "btn btn--submit") {
         cardL.textContent = "";
         cardR.textContent = "";
-        const img = document.createElement("img");
-        i = img;
-        img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKfZS7sKX1MJ7WClhNt2EwP12GbFzpc-09wYP1_VPknMkG1v3JWS9o_WEBAlj0CrrqIy0&usqp=CAU";
-        img.width = 100;
-        img.style.marginTop = "1rem";
-        cardL.append(img);
-        i = img;
-        localStorage.setItem("Name", JSON.stringify(name.value));
-        console.log(window.localStorage.getItem("Name.value"));
-        const nameTransfer = document.createElement("p");
-        nameTransfer.textContent = name.value;
-        const emailTransfer = document.createElement("p");
-        emailTransfer.textContent = email.value;
-        const phoneTransfer = document.createElement("p");
-        phoneTransfer.textContent = phone.value;
-        const adressTransfer = document.createElement("p");
-        adressTransfer.textContent = adress.value;
-        const servicesTransfer = document.createElement("p");
-        servicesTransfer.textContent = services.value;
-        cardL.append(nameTransfer, servicesTransfer);
-        cardR.append(emailTransfer, phoneTransfer, adressTransfer);
-        clearData();
+        generateCart();
+        getDataFromStorage();
+        getI = JSON.parse(window.localStorage.getItem("BusinessCart", JSON.stringify("asas")));
+    } else if (e1.target.className === "btn btn--result") {
+        cardR.textContent = "";
+        cardL.textContent = "";
+    } else if (e1.target.className === "btn btn--clear") {
+        window.localStorage.clear();
+        cardR.textContent = "";
+        cardL.textContent = "";
+        inputs.forEach((e)=>{
+            e.value = "";
+        });
     }
 });
-function add(tag, attributes) {
-    const element = document.createElement(tag);
-    attributes.forEach((p)=>{
-        element[p.name] = p.value;
-    });
-    return element;
-}
 
 //# sourceMappingURL=index.44983732.js.map
