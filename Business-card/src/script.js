@@ -14,8 +14,6 @@ let r = [];
 let transferData = "";
 let cycle = 0;
 
-let check = false;
-
 let getI;
 
 function generateCart() {
@@ -85,8 +83,6 @@ function getDataFromStorage() {
 
   cardL.append(nameTransfer, servicesTransfer);
   cardR.append(emailTransfer, phoneTransfer, adressTransfer);
-
-  //Generate cart
 }
 
 getDataFromStorage();
@@ -97,9 +93,6 @@ document.addEventListener("click", (e) => {
     cardR.textContent = "";
     generateCart();
     getDataFromStorage();
-    getI = JSON.parse(
-      window.localStorage.getItem("BusinessCart", JSON.stringify("asas"))
-    );
   } else if (e.target.className === "btn btn--result") {
     cardR.textContent = "";
     cardL.textContent = "";
