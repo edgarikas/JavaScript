@@ -2,45 +2,93 @@ html {
   font-size: 62.5%;
 }
 
-h1 {
-  font-size: 2.8rem;
-  font-weight: 600;
+body {
+  background: #2f4f4f;
 }
 
-h2 {
-  font-size: 2.2rem;
-  font-weight: 600;
+#app {
+  max-width: 60rem;
+  background: #00008b;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 10vh auto 0;
+  display: grid;
+  box-shadow: 0 0 15px 6px #ff8400;
 }
 
-.box {
-  background: #add8e6;
-  margin: 2rem 1rem;
-  font-size: 1.8rem;
-}
-
-.btnBuy {
-  cursor: pointer;
+#card-inputs {
+  text-align: center;
   color: #fff;
-  background: #8b0000;
-  border: 3px solid #8b0000;
+  padding-top: 1rem;
+  font-size: 1.3rem;
+}
+
+label {
+  width: 100px;
+  display: inline-block;
+}
+
+input {
+  text-align: left;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+}
+
+#business-card-output {
+  color: #fff;
+  text-align: center;
+  border-left: 3px solid orange;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  padding-right: 2rem;
+  font-size: 1.2rem;
+  display: grid;
+}
+
+#cardR {
+  margin-bottom: 3rem;
+  margin-left: 1rem;
+}
+
+#card p {
+  margin-right: 110rem;
+}
+
+#icon {
+  width: 100px;
+}
+
+#business-card-output p {
+  text-align: center;
   margin-top: 1rem;
 }
 
-.btnBuy:hover {
-  color: #000;
-  background: #add8e6;
+#service {
+  margin-bottom: 1rem;
 }
 
-.findUs:after {
-  content: " --->";
+.action {
+  flex-direction: column;
+  align-items: center;
+  margin-left: 3rem;
+  display: flex;
 }
 
-img {
-  width: 4rem;
+.action--btn {
+  color: #fff;
+  background: #00008b;
+  border-radius: 40px;
+  margin-bottom: 1rem;
+  padding: .5rem 2rem;
+  font-weight: 600;
+  box-shadow: 0 0 5px 3px #ff8400;
 }
 
-a {
-  color: #00f;
+.action--btn:hover {
+  color: #00008b;
+  background: #ffa600;
+  font-size: 1.2rem;
+  transition: all .5s;
+  box-shadow: 0 0 10px 6px #00008b;
 }
 
 /*# sourceMappingURL=index.38ec9247.css.map */

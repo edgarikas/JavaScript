@@ -116,3 +116,12 @@ document.addEventListener("click", (e) => {
       break;
   }
 });
+
+function add(tag, attributes) {
+  const element = document.createElement(tag);
+
+  attributes.forEach((p) => {
+    element[p.name] = p.value;
+  });
+  return element;
+}
