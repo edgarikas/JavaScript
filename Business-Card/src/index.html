@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.scss" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <title>Document</title>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <main id="app">
+      <form id="card-inputs">
+        <div>
+          <label for="name">Full Name</label>
+          <input name="name" type="text" id="name" />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input name="email" type="email" id="email" />
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input name="phone" type="tel" id="phone" />
+        </div>
+        <div>
+          <label for="address">Address</label>
+          <input name="address" type="addresss" id="address" />
+        </div>
+        <div>
+          <label for="service">Service</label>
+          <input name="service" type="text" id="service" />
+        </div>
+        <div class="action">
+          <button type="submit" class="action--btn">Save</button>
+          <button class="action--btn" id="clearData">Clear Data</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
