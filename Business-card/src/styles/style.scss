@@ -1,5 +1,4 @@
 $color-body: darkslategray;
-$color-primry: darkblue;
 
 html {
   font-size: 62.5%;
@@ -9,142 +8,115 @@ body {
   background: $color-body;
 }
 
-::placeholder {
-  color: #cdcdb7;
+#app {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 10vh auto 0 auto;
+  box-shadow: 0px 0px 15px 6px rgba(255, 132, 0, 1);
+  max-width: 60rem;
+  background: darkblue;
 }
 
-h1 {
-  font-size: 7rem;
+#card-inputs {
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 1.3rem;
+  color: white;
 }
 
-h2 {
-  font-size: 4rem;
-}
-
-h3 {
-  font-size: 3rem;
-}
-
-p {
-  font-size: 2rem;
-}
-
-@media screen and (min-width: 1024px) {
-  body {
-    font-size: 1.8rem;
-  }
-
-  p {
-    font-size: 1.6rem;
-  }
-
-  h1 {
-    font-size: 8rem;
-  }
-
-  h2 {
-    font-size: 4rem;
-  }
-
-  h3 {
-    font-size: 2.4rem;
-  }
-
-  .btn {
-    font-size: 1.8rem;
-  }
+label {
+  width: 100px;
+  display: inline-block;
 }
 
 input {
-  border-radius: 5px;
-  margin-bottom: 1.5rem;
-  padding: 0.75rem 1rem;
-  width: 20rem;
+  text-align: left;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
 }
 
-.container {
-  background: $color-primry;
+#business-card-output {
+  border-left: 3px solid orange;
   color: white;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  line-height: 1.5;
-  margin: 10vh auto 0 auto;
-  max-width: 90rem;
-  text-align: left;
-  box-shadow: 0px 0px 15px 6px rgba(255, 132, 0, 1);
+  text-align: center;
+  align-items: center;
+  font-size: 1.2rem;
+  padding-right: 2rem;
 }
 
-.data {
-  padding: 2rem 2.5rem;
-  justify-self: center;
+#cardR {
+  margin-bottom: 3rem;
+  margin-left: 1rem;
 }
 
-.btn {
+#cardL {
+}
+
+#card p {
+  margin-right: 110rem;
+}
+
+#icon {
+  width: 100px;
+}
+
+#business-card-output p {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+#service {
+  margin-bottom: 1rem;
+}
+
+.action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 3rem;
+}
+
+.action--btn {
   background: darkblue;
   color: white;
+  padding: 0.5rem 2rem;
+  margin-bottom: 1rem;
   font-weight: 600;
-  font-size: 1.6rem;
-  padding: 1rem 3rem;
-  box-shadow: 0px 0px 5px 3px rgba(255, 132, 0, 1);
   border-radius: 40px;
-  margin: 2rem 4rem;
+  box-shadow: 0px 0px 5px 3px rgba(255, 132, 0, 1);
 }
 
-.btn--result {
-  align-self: flex-start;
-  justify-self: center;
-  padding: 2rem 4rem;
-  margin-bottom: -3rem;
-}
-
-.btn--clear {
-  padding: 2rem 4rem;
-  margin-top: 0;
-  align-self: flex-start;
-  justify-self: center;
-}
-
-.btn:hover {
+.action--btn:hover {
   background: rgb(255, 166, 0);
   color: darkblue;
   box-shadow: 0px 0px 10px 6px darkblue;
   transition: 0.5s;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 
-.btn--submit::after {
-  content: "   >";
-}
+@media screen and (max-width: 648px) {
+  #app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 30rem;
+  }
 
-.result {
-  padding: 3rem 2.5rem;
-  border-left: 3px solid rgba(255, 153, 0, 0.934);
-  display: grid;
-}
+  .action {
+    margin-bottom: 2rem;
+  }
 
-.result > img {
-  width: 100px;
-  margin-top: 6rem;
-}
+  input {
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+  }
 
-.card {
-  border: 3px solid white;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  height: 20rem;
-  width: 45rem;
-}
-
-.cardL {
-  text-align: center;
-  align-self: center;
-}
-
-.cardR {
-  text-align: center;
-  align-self: center;
-}
-
-.cardL > img {
-  border-radius: 100%;
+  #business-card-output {
+    border-top: 3px solid orange;
+    border-left: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }

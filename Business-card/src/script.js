@@ -1,107 +1,85 @@
-const btn = document.querySelector("btn");
-const cardL = document.querySelector(".cardL");
-const cardR = document.querySelector(".cardR");
-let inputs = document.querySelectorAll("input");
-const name = document.querySelector(".input--fullname");
-const email = document.querySelector(".input--email");
-const phone = document.querySelector(".input--phone");
-const adress = document.querySelector(".input--adress");
-const services = document.querySelector(".input--services");
-const clearCart = document.querySelector(".btn--result");
+function render(data) {
+  const cardContainerId = "business-card-output";
 
-let data = [JSON.parse(window.localStorage.getItem("BusinessCart"))];
-let r = [];
-let transferData = "";
-let cycle = 0;
+  if (document.querySelector(`#${cardContainerId}`)) {
+    document.querySelector(`#${cardContainerId}`).remove();
+  }
 
-let getI;
+  const cardContainer = document.createElement("div");
+  cardContainer.id = cardContainerId;
+  const cardContainerRight = document.createElement("div");
+  const cardContainerLeft = document.createElement("div");
+  cardContainerRight.id = "cardR";
+  cardContainerLeft.id = "cardL";
 
-function generateCart() {
-  cycle = 0;
-  inputs.forEach((e) => {
-    data[cycle] = e.value;
-    if (cycle === 0 || cycle === 4) {
-      transferData = document.createElement("p");
-      transferData.textContent = e.value;
-      cardL.append(transferData);
-    } else if (cycle >= 2 || cycle == 1) {
-      transferData = document.createElement("p");
-      transferData.textContent = e.value;
-      cardR.append(transferData);
-    }
-    cycle += 1;
-  });
+  const nameP = createElement("p", [{ name: "textContent", value: data.name }]);
+  const emailP = createElement("p", [
+    { name: "textContent", value: data.email },
+  ]);
+  const phoneP = createElement("p", [
+    { name: "textContent", value: data.phone },
+  ]);
+  const addressP = createElement("p", [
+    { name: "textContent", value: data.address },
+  ]);
+  const serviceP = createElement("p", [
+    { name: "textContent", value: data.service },
+  ]);
 
-  window.localStorage.setItem("BusinessCart", JSON.stringify(data));
-  // console.log("data = ", data);
+  cardContainerRight.append(emailP, phoneP, addressP);
+
+  cardContainerLeft.append(generateImage());
+  cardContainerLeft.append(nameP, serviceP);
+
+  cardContainer.append(cardContainerLeft, cardContainerRight);
+
+  document.querySelector("#app").append(cardContainer);
+}
+
+function createElement(tag, props) {
+  const newTag = document.createElement(tag);
+
+  if (props && props.length) {
+    props.forEach((singleProp) => {
+      newTag[singleProp.name] = singleProp.value;
+    });
+  }
+  return newTag;
 }
 
 function generateImage() {
   let img = document.createElement("img");
   img.src =
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKfZS7sKX1MJ7WClhNt2EwP12GbFzpc-09wYP1_VPknMkG1v3JWS9o_WEBAlj0CrrqIy0&usqp=CAU";
-  img.width = 100;
-  img.style.marginTop = "1rem";
-  cardL.append(img);
+  img.id = "icon";
+  return img;
 }
 
-function getDataFromStorage() {
-  cardL.textContent = "";
-  cardR.textContent = "";
+window.addEventListener("DOMContentLoaded", () => {
+  if (window.localStorage.getItem("cardInputs")) {
+    const persistedData = JSON.parse(window.localStorage.getItem("cardInputs"));
+    render(persistedData);
 
-  getI = JSON.parse(window.localStorage.getItem("BusinessCart"));
-  console.log("getI =  ", getI);
-  if (getI) {
-    generateImage();
-  }
-  for (let i = 0; i < 5; i++) {
-    r[i] = "";
-  }
-  if (getI) {
-    for (let i = 0; i < 5; i++) {
-      r[i] = getI[i];
-    }
-  }
-
-  name.value = r[0];
-  email.value = r[1];
-  phone.value = r[2];
-  adress.value = r[3];
-  services.value = r[4];
-
-  const nameTransfer = document.createElement("p");
-  nameTransfer.textContent = name.value;
-  const servicesTransfer = document.createElement("p");
-  servicesTransfer.textContent = services.value;
-
-  const emailTransfer = document.createElement("p");
-  emailTransfer.textContent = email.value;
-  const adressTransfer = document.createElement("p");
-  adressTransfer.textContent = adress.value;
-  const phoneTransfer = document.createElement("p");
-  phoneTransfer.textContent = phone.value;
-
-  cardL.append(nameTransfer, servicesTransfer);
-  cardR.append(emailTransfer, phoneTransfer, adressTransfer);
-}
-
-getDataFromStorage();
-
-document.addEventListener("click", (e) => {
-  if (e.target.className == "btn btn--submit") {
-    cardL.textContent = "";
-    cardR.textContent = "";
-    generateCart();
-    getDataFromStorage();
-  } else if (e.target.className === "btn btn--result") {
-    cardR.textContent = "";
-    cardL.textContent = "";
-  } else if (e.target.className === "btn btn--clear") {
-    window.localStorage.clear();
-    cardR.textContent = "";
-    cardL.textContent = "";
-    inputs.forEach((e) => {
-      e.value = "";
+    document.querySelectorAll("#card-inputs input").forEach((input) => {
+      input.value = persistedData[input.name];
     });
+  }
+});
+
+document.querySelector("#card-inputs").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const cardInputs = Object.fromEntries(new FormData(e.target));
+
+  render(Object.fromEntries(new FormData(e.target)));
+  window.localStorage.setItem("cardInputs", JSON.stringify(cardInputs));
+});
+
+document.querySelector(".action").addEventListener("click", (e) => {
+  if (e.target.id === "clearData") {
+    e.preventDefault();
+    window.localStorage.clear();
+    alert("Data Deleted");
+    location.reload();
   }
 });
