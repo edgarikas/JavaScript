@@ -1,55 +1,42 @@
 html {
-  font-size: 10px;
+  font-size: 62.5%;
 }
 
-.container {
-  max-width: 400px;
-  text-align: center;
-  background: #ffffffcf;
-  margin: 10vh auto 0;
-  box-shadow: 0 0 40px 13px #ff840066;
+label {
+  font-size: 1.8rem;
 }
 
-.inputs {
-  margin-top: 1rem;
+#app {
+  background: #00008b;
+}
+
+.newGuest {
+  color: #fff;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
 }
 
 .buttons {
-  text-align: center;
-  margin: 1rem 1.5rem;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
 }
 
 .btn {
-  text-align: center;
-  width: 6.5rem;
-  background: none;
-  border-bottom: 1px solid #999;
-  border-left: 1px solid #999;
-  margin-top: 1rem;
-  font-size: 1.6rem;
-  font-weight: 500;
+  max-width: 20rem;
+  margin: 1rem;
 }
 
-.btn:hover {
+#guestsList {
   color: #fff;
-  background: #323330;
-  transition: all .4s ease-in-out;
-}
-
-h1 {
-  background-color: #ff8400b5;
-  padding: 1rem;
-  font-size: 2.1rem;
-  font-weight: bold;
-}
-
-.result {
-  height: 30px;
-  background-color: #ff8400b5;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  font-size: 1.8rem;
-  font-weight: bold;
+  text-align: center;
+  border-top: 3px solid orange;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 2.4rem;
+  line-height: 1.5;
 }
 
 /*# sourceMappingURL=index.38ec9247.css.map */

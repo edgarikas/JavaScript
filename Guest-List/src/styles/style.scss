@@ -1,0 +1,38 @@
+html {
+  font-size: 62.5%;
+}
+label {
+  font-size: 1.8rem;
+}
+#app {
+  background: darkblue;
+}
+
+.newGuest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  max-width: 20rem;
+  margin: 1rem 1rem;
+}
+
+#guestsList {
+  border-top: 3px solid orange;
+  color: white;
+  font-size: 2.4rem;
+  padding-top: 2rem;
+  margin-top: 3rem;
+  padding-bottom: 2rem;
+  line-height: 1.5;
+  text-align: center;
+}
