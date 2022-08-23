@@ -1,4 +1,4 @@
-let guestList = [];
+let guestList = ["aas"];
 
 function render() {
   guestsContainerId = "guestsList";
