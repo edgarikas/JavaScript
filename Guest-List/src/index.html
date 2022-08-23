@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/style.scss" />
+    <script src="./script.js" defer></script>
+    <title>Guest List</title>
+  </head>
+  <body>
+    <main id="app">
+      <form id="guest-inputs">
+        <div class="firstSectionInputs">
+          <label for="guest">Guest Full Name</label>
+          <input type="text" name="name" id="guest" />
+          <button class="btn" id="addListEnd">Add Guest to list end</button>
+          <button class="btn" id="addListStart">Add guest to list start</button>
+          <button class="btn" id="removeFirst">Remove first Guest</button>
+          <button class="btn" id="removeLast">Remove last Guest</button>
+          <button class="btn" id="reverse">Reverse List</button>
+          <button class="btn" id="firstToLast">Move first to last</button>
+          <button class="btn" id="lastToFirst">Move last to first</button>
+        </div>
+        <div class="secondSectionInputs">
+          <label for="delete">First Point</label>
+          <input type="number" min="1" id="firstPoint" />
+          <label for="delete">Second Point</label>
+          <input type="number" min="1" id="secondPoint" />
+          <button class="btn" id="removeFromTo">Remove from - to</button>
+
+          <label for="add">Add Guest at certain point</label>
+          <input type="number" name="addGuestto" id="certainPoint" min="1" />
+          <label for="name">Guest Full Name</label>
+          <input type="text" name="name" id="certainPointName" />
+          <button class="btn" id="addToCertainPoint">Add Guest to</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
