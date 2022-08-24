@@ -1,4 +1,5 @@
-let guestList = ["aas"];
+let guestList = [""];
+let i = 0; //temporary
 
 function render() {
   guestsContainerId = "guestsList";
@@ -48,11 +49,7 @@ document.querySelector("form").addEventListener("click", (b) => {
     case "removeFromTo":
       let a = document.querySelector("#firstPoint").value;
       let b = document.querySelector("#secondPoint").value;
-      let amount = 0;
-      amount = parseInt(b) - parseInt(a);
-      a = parseInt(a - 1);
-      amount = parseInt(amount + 1);
-      guestList.splice(a, amount);
+      guestList.splice(a - 1, parseInt(b) - parseInt(a - 1));
       break;
 
     case "addToCertainPoint":
@@ -73,8 +70,22 @@ document.querySelector("form").addEventListener("click", (b) => {
       guestList.unshift(lastName);
       break;
 
+    case "sortAZ":
+      guestList = guestList.sort();
+      break;
+
+    case "sortZA":
+      guestList = guestList.sort().reverse();
+      break;
+
     default:
       break;
   }
+
+  if (i == 0) {
+    guestList.shift(); //Temporary
+    i = 1;
+  }
+
   render();
 });
