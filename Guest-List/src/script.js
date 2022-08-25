@@ -22,8 +22,9 @@ function render() {
 
 document.querySelector("form").addEventListener("click", (b) => {
   b.preventDefault();
+  console.dir(b.target);
   let guestInput = document.querySelector("#guest").value;
-  if (b.target.nodeName === "BUTTON") {
+  if (b.target.tagName === "BUTTON") {
     switch (b.target.id) {
       case "addListEnd":
         guestList.push(guestInput);
@@ -73,7 +74,9 @@ document.querySelector("form").addEventListener("click", (b) => {
         break;
 
       case "sortZA":
-        guestList = guestList.sort((a, b) => b.localeCompare(a));
+        guestList = guestList.sort((a, z) => {
+          return z.localeCompare(a);
+        });
         break;
 
       default:
