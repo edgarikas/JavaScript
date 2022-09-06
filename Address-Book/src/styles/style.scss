@@ -1,0 +1,60 @@
+$color-body: darkslategray;
+* {
+  font-size: 62.5%;
+}
+
+body {
+  background: $color-body;
+}
+
+#app {
+  color: white;
+  margin: 10vh auto 0 auto;
+}
+
+#address-book-inputs {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+label {
+  width: 150px;
+  display: inline-block;
+}
+
+.btn {
+  padding: 0.25rem 2rem;
+  background: darkblue;
+  color: white;
+  margin-top: 2rem;
+  font-weight: 600;
+  border-radius: 40px;
+  box-shadow: 0px 0px 5px 3px rgba(255, 132, 0, 1);
+  margin-left: 1rem;
+}
+
+.btn:hover {
+  background: rgb(255, 166, 0);
+  color: darkblue;
+  box-shadow: 0px 0px 10px 6px darkblue;
+  transition: 0.5s;
+  font-size: 1.2rem;
+}
+
+#inputs {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-top: 3rem;
+  border-top: 3px solid darkblue;
+  padding-top: 1rem;
+}
+
+#inputs > p {
+  line-height: 1.5;
+  font-size: 1.4rem;
+}
+
+#inputs > h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
