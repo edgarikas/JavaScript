@@ -3,6 +3,8 @@ function render() {
   const inputsContainer = document.createElement("div");
   const heading = document.createElement("h2");
   heading.textContent = "Address Book";
+  const ul = document.createElement("ul");
+
   inputsContainer.append(heading);
 
   inputsContainer.id = inputsId;
@@ -13,13 +15,14 @@ function render() {
   for (i = 1; i <= window.localStorage.length; i++) {
     let array = JSON.parse(window.localStorage.getItem(i));
 
-    let inputsData = document.createElement("p");
-    inputsData.textContent += array.name;
-    inputsData.textContent += " - ";
-    inputsData.textContent += array.email;
-    inputsContainer.append(inputsData);
-    document.querySelector("#app").append(inputsContainer);
+    let li = document.createElement("li");
+    li.textContent += array.name;
+    li.textContent += " - ";
+    li.textContent += array.email;
+    ul.append(li);
   }
+  inputsContainer.append(ul);
+  document.querySelector("#app").append(inputsContainer);
 }
 
 window.addEventListener("DOMContentLoaded", () => {
