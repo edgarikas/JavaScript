@@ -54,7 +54,7 @@ document.querySelector(".add").addEventListener("click", (e) => {
 });
 
 document.querySelector("#app").addEventListener("click", (e) => {
-  console.dir(e.target);
+  //console.dir(e.target);
   if (e.target.className === "delete") {
     let newArray = JSON.parse(window.localStorage.getItem("contacts"));
     newArray.splice(e.target.id, 1);
@@ -63,11 +63,14 @@ document.querySelector("#app").addEventListener("click", (e) => {
     render();
   } else if (e.target.className === "favorite") {
     let id = e.target.id;
+
     document.querySelectorAll("li").forEach((e) => {
-      if (e.id === "addedToFav") {
+      if (e.id === "addedToFav" && id === e.firstElementChild.id) {
         e.id = "";
+        console.log("Remove fav");
       } else if (id === e.firstElementChild.id) {
         e.id = "addedToFav";
+        console.log("added fav");
       }
     });
   }
