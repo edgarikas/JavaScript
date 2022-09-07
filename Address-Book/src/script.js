@@ -67,10 +67,8 @@ document.querySelector("#app").addEventListener("click", (e) => {
     document.querySelectorAll("li").forEach((e) => {
       if (e.id === "addedToFav" && id === e.firstElementChild.id) {
         e.id = "";
-        console.log("Remove fav");
       } else if (id === e.firstElementChild.id) {
         e.id = "addedToFav";
-        console.log("added fav");
       }
     });
   }
