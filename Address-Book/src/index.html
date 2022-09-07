@@ -10,21 +10,23 @@
   </head>
   <body>
     <main id="app">
+      <h1>Adding and Editing List</h1>
       <form id="address-book-inputs">
         <div>
           <label for="name">Full Name</label>
-          <input class="data" name="name" type="text" id="name" />
+          <input type="text" name="name" id="name" required />
         </div>
+
         <div>
-          <label for="name">Email</label>
-          <input class="data" name="email" type="email" id="email" />
+          <label for="phone">Phone</label>
+          <input type="phone" name="phone" id="phone" required />
         </div>
-        <div class="action">
-          <button type="submit" class="btn add">Add</button>
-          <button type="reset" class="btn delete">Delete</button>
-        </div>
+
+        <button type="submit" class="btn add">ADD</button>
       </form>
+
+      <div class="container"></div>
     </main>
-    <script src="./m.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>

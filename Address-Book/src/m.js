@@ -19,6 +19,9 @@ function render() {
     li.textContent += array.name;
     li.textContent += " - ";
     li.textContent += array.email;
+    const span = document.createElement("span");
+    span.textContent = "+";
+    li.append(span);
     ul.append(li);
   }
   inputsContainer.append(ul);

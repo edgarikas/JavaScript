@@ -1,48 +1,65 @@
+let addressBook = [];
+let newArray = JSON.parse(window.localStorage.getItem("contacts"));
+if (Array.isArray(newArray)) {
+  addressBook = newArray;
+}
+
 function render() {
-  const inputsId = "inputs";
-  const inputsContainer = document.createElement("div");
-  const heading = document.createElement("h2");
-  heading.textContent = "Address Book";
-
-  inputsContainer.append(heading);
-
-  inputsContainer.id = inputsId;
-  if (document.querySelector(`#${inputsId}`)) {
-    document.querySelector(`#${inputsId}`).remove();
+  containerClass = "container";
+  let getData = JSON.parse(window.localStorage.getItem("contacts"));
+  if (document.querySelector(`.${containerClass}`)) {
+    document.querySelector(`.${containerClass}`).remove();
   }
-
-  for (i = 1; i <= window.localStorage.length; i++) {
-    let array = JSON.parse(window.localStorage.getItem(i));
-
-    let inputsData = document.createElement("p");
-    inputsData.textContent += array.name;
-    inputsData.textContent += " - ";
-    inputsData.textContent += array.email;
-    inputsContainer.append(inputsData);
-    document.querySelector("#app").append(inputsContainer);
+  containerClass = "container";
+  const container = document.createElement("div");
+  container.className = containerClass;
+  document.querySelector("#app").append(container);
+  const ul = document.createElement("ul");
+  document.querySelector(".container").append(ul);
+  if (getData) {
+    getData.forEach((e, i) => {
+      const li = document.createElement("li");
+      const btnF = document.createElement("button");
+      btnF.className = "favorite";
+      const btnE = document.createElement("button");
+      btnE.className = "edit";
+      const btnD = document.createElement("button");
+      btnD.className = "delete";
+      btnD.id = i;
+      li.textContent = e;
+      li.append(btnF, btnE, btnD);
+      document.querySelector("ul").append(li);
+    });
   }
 }
 
 window.addEventListener("DOMContentLoaded", () => {
   render();
 });
+document.querySelector(".add").addEventListener("click", (e) => {
+  e.preventDefault();
+  let name = document.querySelector("#name").value;
+  let phone = document.querySelector("#phone").value;
+  let contact = name + " - " + phone;
 
-document
-  .querySelector("#address-book-inputs")
-  .addEventListener("submit", (e) => {
-    e.preventDefault();
-    let q = window.localStorage.length;
-    const inputs = Object.fromEntries(new FormData(e.target));
-    window.localStorage.setItem(q + 1, JSON.stringify(inputs));
-    //Clear Inputs Field
-    document.querySelectorAll(".data").forEach((input) => {
-      input.value = "";
-    });
+  addressBook[addressBook.length] = contact;
+  window.localStorage.setItem("contacts", JSON.stringify(addressBook));
+
+  console.log(addressBook);
+
+  render();
+  document.querySelector("#name").value = "";
+  document.querySelector("#phone").value = "";
+});
+
+document.querySelector("#app").addEventListener("click", (e) => {
+  if (e.target.className === "delete") {
+    let newArray = JSON.parse(window.localStorage.getItem("contacts"));
+    newArray.splice(e.target.id, 1);
+    addressBook = newArray;
+    window.localStorage.setItem("contacts", JSON.stringify(newArray));
     render();
-  });
-
-//Delete Entry
-document.querySelector(".delete").addEventListener("click", (d) => {
-  window.localStorage.removeItem(window.localStorage.length);
-  location.reload();
+  } else if (e.target.className === "favorite") {
+    e.target.id = "favContact";
+  }
 });
