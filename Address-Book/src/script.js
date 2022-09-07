@@ -64,11 +64,11 @@ document.querySelector("#app").addEventListener("click", (e) => {
   } else if (e.target.className === "favorite") {
     let id = e.target.id;
     document.querySelectorAll("li").forEach((e) => {
-      if (id === e.firstElementChild.id) {
+      if (e.id === "addedToFav") {
+        e.id = "";
+      } else if (id === e.firstElementChild.id) {
         e.id = "addedToFav";
       }
     });
-
-    //document.querySelectorAll("li").forEach(e => {console.dir(e.firstElementChild.id)})
   }
 });
