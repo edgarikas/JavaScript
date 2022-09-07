@@ -21,7 +21,6 @@ function render() {
       const li = document.createElement("li");
       const btnF = document.createElement("button");
       btnF.className = "favorite";
-      btnF.id = i;
       const btnE = document.createElement("button");
       btnE.className = "edit";
       const btnD = document.createElement("button");
@@ -54,7 +53,7 @@ document.querySelector(".add").addEventListener("click", (e) => {
 });
 
 document.querySelector("#app").addEventListener("click", (e) => {
-  console.dir(e.target);
+  console.log(e.target);
   if (e.target.className === "delete") {
     let newArray = JSON.parse(window.localStorage.getItem("contacts"));
     newArray.splice(e.target.id, 1);
@@ -62,13 +61,10 @@ document.querySelector("#app").addEventListener("click", (e) => {
     window.localStorage.setItem("contacts", JSON.stringify(newArray));
     render();
   } else if (e.target.className === "favorite") {
-    let id = e.target.id;
-    document.querySelectorAll("li").forEach((e) => {
-      if (id === e.firstElementChild.id) {
-        e.id = "addedToFav";
-      }
-    });
+    e.target.id = "favContact";
+    console.log(document.querySelector("li"));
+    console.log(e.target.id);
 
-    //document.querySelectorAll("li").forEach(e => {console.dir(e.firstElementChild.id)})
+    //document.querySelectorAll("li").forEach(e => {console.dir(e.lastChild.id)})
   }
 });
