@@ -1,0 +1,172 @@
+$color-body: darkslategray;
+
+* {
+  font-size: 62.5%;
+}
+
+body {
+  background: $color-body;
+}
+
+#new-address {
+  color: white;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+#new-address > h1 {
+  font-size: 2.4rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-decoration: underline;
+}
+input {
+  margin-bottom: 1rem;
+}
+
+.search {
+  font-size: 2rem;
+}
+
+ul li {
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: space-evenly;
+  background: white;
+  padding: 0.15rem 0;
+}
+
+ul li p {
+  width: 15rem;
+  text-align: center;
+  margin-left: 1.25rem;
+}
+
+ul li a {
+  text-align: center;
+  width: 10rem;
+  margin-left: 1rem;
+}
+
+ul li input {
+  margin: 0;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+ul li #nameI {
+  width: 15rem;
+  margin-left: 2rem;
+}
+
+ul li #phoneI {
+  width: 10rem;
+  margin-right: 12rem;
+}
+
+ul li .btn {
+  margin-right: 0.2rem;
+}
+
+.address--book {
+  color: black;
+  font-size: 1.4rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.address--book__title {
+  border-bottom: 3px solid gold;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1.5rem;
+  margin-top: 5rem;
+  width: 100%;
+}
+
+.address--book__title > input {
+  margin-bottom: 0.1rem;
+}
+
+#title--name {
+  width: 15rem;
+}
+
+#title-phone {
+  width: 10rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  flex-basis: 12rem;
+}
+
+#isEditing {
+  margin-left: -10rem;
+}
+
+.favorite {
+  background: rgb(227, 170, 0);
+  font-weight: bold;
+}
+
+.delete {
+  border: 1px solid black;
+  cursor: pointer;
+  background: red;
+  font-weight: bold;
+  padding: 0 0.75rem;
+}
+
+.buttons--fav {
+  border: 1px solid black;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0 0.9rem;
+}
+
+.buttons--no-fav {
+  background: goldenrod;
+  padding: 0 0.75rem;
+  cursor: pointer;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.edit {
+  background: rgb(0, 193, 0);
+  padding: 0 0.75rem;
+  cursor: pointer;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.inEditing {
+  border: 2px solid black;
+  border-radius: 3px;
+  background: rgb(255, 162, 0);
+  cursor: pointer;
+}
+
+.editor {
+  background: rgba(0, 193, 0, 0.742);
+}
+
+.editor .delete {
+  display: none;
+}
+
+.editor .buttons--no-fav {
+  display: none;
+}
+
+.editor .buttons--fav {
+  display: none;
+}
+
+.editor input {
+  border: 2px solid black;
+  border-radius: 5px;
+}
