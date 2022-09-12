@@ -1,0 +1,165 @@
+* {
+  font-size: 62.5%;
+}
+
+body {
+  background: #2f4f4f;
+}
+
+#new-address {
+  color: #fff;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+#new-address > h1 {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-size: 2.4rem;
+  text-decoration: underline;
+}
+
+input {
+  margin-bottom: 1rem;
+}
+
+.search {
+  font-size: 2rem;
+}
+
+ul li {
+  background: #fff;
+  justify-content: space-evenly;
+  margin-bottom: .75rem;
+  padding: .15rem 0;
+  display: flex;
+}
+
+ul li p {
+  width: 15rem;
+  text-align: center;
+  margin-left: 1.25rem;
+}
+
+ul li a {
+  text-align: center;
+  width: 10rem;
+  margin-left: 1rem;
+}
+
+ul li input {
+  text-align: center;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+ul li #nameI {
+  width: 15rem;
+  margin-left: 2rem;
+}
+
+ul li #phoneI {
+  width: 10rem;
+  margin-right: 12rem;
+}
+
+ul li .btn {
+  margin-right: .2rem;
+}
+
+.address--book {
+  color: #000;
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.address--book__title {
+  color: #fff;
+  width: 100%;
+  border-bottom: 3px solid gold;
+  justify-content: space-evenly;
+  margin-top: 5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+}
+
+.address--book__title > input {
+  margin-bottom: .1rem;
+}
+
+#title--name {
+  width: 15rem;
+}
+
+#title-phone {
+  width: 10rem;
+}
+
+.buttons {
+  flex-basis: 12rem;
+  justify-content: space-around;
+  display: flex;
+}
+
+#isEditing {
+  margin-left: -10rem;
+}
+
+.favorite {
+  background: #e3aa00;
+  font-weight: bold;
+}
+
+.delete {
+  cursor: pointer;
+  background: red;
+  border: 1px solid #000;
+  padding: 0 .75rem;
+  font-weight: bold;
+}
+
+.buttons--fav {
+  cursor: pointer;
+  border: 1px solid #000;
+  padding: 0 .9rem;
+  font-weight: bold;
+}
+
+.buttons--no-fav {
+  cursor: pointer;
+  background: #daa520;
+  border: 1px solid #000;
+  padding: 0 .75rem;
+  font-weight: bold;
+}
+
+.edit {
+  cursor: pointer;
+  background: #00c100;
+  border: 1px solid #000;
+  padding: 0 .75rem;
+  font-weight: bold;
+}
+
+.inEditing {
+  cursor: pointer;
+  background: #ffa200;
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+.editor {
+  background: #00c100bd;
+}
+
+.editor .delete, .editor .buttons--no-fav, .editor .buttons--fav {
+  display: none;
+}
+
+.editor input {
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=index.38ec9247.css.map */
