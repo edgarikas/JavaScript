@@ -22,7 +22,6 @@ function render() {
 
 document.querySelector("form").addEventListener("click", (b) => {
   b.preventDefault();
-  console.dir(b.target);
   let guestInput = document.querySelector("#guest").value;
   if (b.target.tagName === "BUTTON") {
     switch (b.target.id) {
