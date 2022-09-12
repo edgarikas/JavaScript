@@ -1,6 +1,5 @@
 $color-body: darkslategray;
 
-//NEW
 * {
   font-size: 62.5%;
 }
@@ -9,139 +8,165 @@ body {
   background: $color-body;
 }
 
-#app > h1 {
+#new-address {
+  color: white;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+#new-address > h1 {
   font-size: 2.4rem;
-  margin-bottom: 3rem;
-  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-decoration: underline;
+}
+input {
+  margin-bottom: 1rem;
 }
 
-#app {
-  color: white;
-  margin: 10vh auto 0 auto;
-}
-#address-book-inputs {
-  font-size: 1.8rem;
-  text-align: center;
-}
-
-form label {
-  display: inline-block;
-  width: 8rem;
-  line-height: 1.5;
-}
-
-form input {
-  height: 2rem;
-  width: 15rem;
-  border: none;
-  outline: none;
-  padding: 0 0.5rem;
-}
-
-.btn {
-  padding: 0.5rem 3rem;
-  background: white;
-  color: teal;
-  margin-top: 2rem;
-  font-weight: 700;
-  border-radius: 40px;
-  font-size: 1.2rem;
-  border: 3px solid teal;
-  box-shadow: 0 0px 5px 1px white;
-}
-
-.btn:hover {
-  background: teal;
-  color: white;
-  border: 3px solid white;
-  box-shadow: 0 0px 7px 3px rgb(0, 181, 181);
-}
-
-.container {
-  margin-top: 5rem;
-  text-align: center;
-  font-size: 1.4rem;
-  display: flex;
-  justify-content: center;
-}
-
-ul {
-  list-style: none;
-  width: 40rem;
+.search {
+  font-size: 2rem;
 }
 
 ul li {
-  width: 100%;
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: space-evenly;
   background: white;
-  padding: 0 0.5rem;
-  color: black;
-  position: relative;
-  cursor: pointer;
-  display: block;
-  margin: 0.5rem 0;
-  text-align: left;
-  padding-left: 2rem;
+  padding: 0.15rem 0;
 }
 
-.delete {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 3rem;
-  height: 100%;
+ul li p {
+  width: 15rem;
   text-align: center;
-  background: #e00;
-  border: none;
-  font-weight: 700;
+  margin-left: 1.25rem;
 }
 
-.delete::after {
-  content: "X";
-}
-
-.favorite {
-  background: gold;
-  border: none;
-  width: 3rem;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 6rem;
+ul li a {
   text-align: center;
-  font-weight: 700;
-  content: "edit";
+  width: 10rem;
+  margin-left: 1rem;
 }
-.favorite::after {
-  content: "+";
+
+ul li input {
+  margin: 0;
+  text-align: center;
   font-size: 1.2rem;
 }
 
-.edit {
-  background: green;
-  border: none;
-  width: 3rem;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 3rem;
+ul li #nameI {
+  width: 15rem;
+  margin-left: 2rem;
+}
+
+ul li #phoneI {
+  width: 10rem;
+  margin-right: 12rem;
+}
+
+ul li .btn {
+  margin-right: 0.2rem;
+}
+
+.address--book {
+  color: black;
+  font-size: 1.4rem;
   text-align: center;
-  font-weight: 700;
-}
-.edit::after {
-  content: "Edit";
+  margin-top: 1.5rem;
 }
 
-#favContact {
-  color: goldenrod;
-  background: greenyellow;
+.address--book__title {
+  border-bottom: 3px solid gold;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1.5rem;
+  margin-top: 5rem;
+  width: 100%;
 }
 
-#addedToFav {
-  background: gold;
+.address--book__title > input {
+  margin-bottom: 0.1rem;
+}
+
+#title--name {
+  width: 15rem;
+}
+
+#title-phone {
+  width: 10rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  flex-basis: 12rem;
+}
+
+#isEditing {
+  margin-left: -10rem;
+}
+
+.favorite {
+  background: rgb(227, 170, 0);
   font-weight: bold;
 }
 
-#addedToFav .favorite {
-  color: black;
-  background: white;
+.delete {
+  border: 1px solid black;
+  cursor: pointer;
+  background: red;
+  font-weight: bold;
+  padding: 0 0.75rem;
+}
+
+.buttons--fav {
+  border: 1px solid black;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0 0.9rem;
+}
+
+.buttons--no-fav {
+  background: goldenrod;
+  padding: 0 0.75rem;
+  cursor: pointer;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.edit {
+  background: rgb(0, 193, 0);
+  padding: 0 0.75rem;
+  cursor: pointer;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.inEditing {
+  border: 2px solid black;
+  border-radius: 3px;
+  background: rgb(255, 162, 0);
+  cursor: pointer;
+}
+
+.editor {
+  background: rgba(0, 193, 0, 0.742);
+}
+
+.editor .delete {
+  display: none;
+}
+
+.editor .buttons--no-fav {
+  display: none;
+}
+
+.editor .buttons--fav {
+  display: none;
+}
+
+.editor input {
+  border: 2px solid black;
+  border-radius: 5px;
 }

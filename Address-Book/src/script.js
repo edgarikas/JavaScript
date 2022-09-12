@@ -1,75 +1,128 @@
-let addressBook = [];
-let newArray = JSON.parse(window.localStorage.getItem("contacts"));
-if (Array.isArray(newArray)) {
-  addressBook = newArray;
+console.log("ACTIVE");
+let contacts = [];
+let addressContacts = "contacts";
+let searchValue = "";
+
+function persistData() {
+  window.localStorage.setItem(addressContacts, JSON.stringify(contacts));
+}
+
+function deleteContact(index) {
+  contacts.splice(index, 1);
+  persistData();
+  render();
 }
 
 function render() {
-  containerClass = "container";
-  let getData = JSON.parse(window.localStorage.getItem("contacts"));
-  if (document.querySelector(`.${containerClass}`)) {
-    document.querySelector(`.${containerClass}`).remove();
+  const contactsId = "contacts-list";
+  const contactsList = document.createElement("ul");
+
+  if (document.querySelector(`#${contactsId}`)) {
+    document.querySelector(`#${contactsId}`).remove();
   }
-  containerClass = "container";
-  const container = document.createElement("div");
-  container.className = containerClass;
-  document.querySelector("#app").append(container);
-  const ul = document.createElement("ul");
-  document.querySelector(".container").append(ul);
-  if (getData) {
-    getData.forEach((e, i) => {
-      const li = document.createElement("li");
-      const btnF = document.createElement("button");
-      btnF.className = "favorite";
-      btnF.id = i;
-      const btnE = document.createElement("button");
-      btnE.className = "edit";
-      const btnD = document.createElement("button");
-      btnD.className = "delete";
-      btnD.id = i;
-      li.textContent = e;
-      li.append(btnF, btnE, btnD);
-      document.querySelector("ul").append(li);
+
+  contactsList.id = contactsId;
+
+  contacts
+    .filter((singleContact) => {
+      return (
+        singleContact.name.toLowerCase().includes(searchValue.toLowerCase()) ||
+        singleContact.phone.includes(searchValue)
+      );
+    })
+    .forEach((singleContact, index) => {
+      const contactEl = document.createElement("li");
+      const buttons = document.createElement("div");
+      const nameEl = document.createElement(
+        singleContact.isInEdit ? "input" : "p"
+      );
+      const phoneEl = document.createElement(
+        singleContact.isInEdit ? "input" : "a"
+      );
+      const deleteBtn = document.createElement("button");
+      const favoriteBtn = document.createElement("button");
+      const editBtn = document.createElement("button");
+
+      if (singleContact.isInEdit) {
+        contactEl.className = singleContact.isInEdit ? "editor" : "";
+      } else if (singleContact.isFavorite) {
+        contactEl.className = singleContact.isFavorite ? "favorite" : "";
+      }
+
+      phoneEl.href = `tel:${singleContact.phone}`;
+      deleteBtn.textContent = "X";
+      deleteBtn.classList = "delete";
+      favoriteBtn.textContent = singleContact.isFavorite ? "-" : "+";
+      favoriteBtn.classList = singleContact.isFavorite
+        ? "buttons--fav"
+        : "buttons--no-fav";
+      editBtn.textContent = singleContact.isInEdit ? "Save" : "Edit";
+      editBtn.className = singleContact.isInEdit ? "inEditing" : "edit";
+      buttons.classList = "buttons";
+
+      if (singleContact.isInEdit) {
+        nameEl.type = "text";
+        phoneEl.type = "tel";
+        nameEl.value = singleContact.name;
+        phoneEl.value = singleContact.phone;
+        nameEl.id = "nameI";
+        phoneEl.id = "phoneI";
+        buttons.id = "isEditing";
+      } else {
+        nameEl.textContent = singleContact.name;
+        phoneEl.textContent = singleContact.phone;
+      }
+
+      deleteBtn.addEventListener("click", () => deleteContact(index));
+
+      favoriteBtn.addEventListener("click", () => {
+        contacts[index].isFavorite = !contacts[index].isFavorite;
+        persistData();
+        render();
+      });
+
+      editBtn.addEventListener("click", (e) => {
+        if (singleContact.isInEdit) {
+          contacts[index].name = nameEl.value;
+          contacts[index].phone = phoneEl.value;
+        }
+        contacts[index].isInEdit = !contacts[index].isInEdit;
+        persistData();
+        render();
+      });
+
+      buttons.append(editBtn, favoriteBtn, deleteBtn);
+      contactEl.append(nameEl, phoneEl, buttons);
+      contactsList.append(contactEl);
     });
-  }
+  document.querySelector(".address--book").append(contactsList);
 }
 
-window.addEventListener("DOMContentLoaded", () => {
+document.querySelector("#search").addEventListener("input", (e) => {
+  searchValue = e.target.value;
   render();
 });
-document.querySelector(".add").addEventListener("click", (e) => {
+
+document.querySelector("#new-address").addEventListener("submit", (e) => {
   e.preventDefault();
-  let name = document.querySelector("#name").value;
-  let phone = document.querySelector("#phone").value;
-  let contact = name + " - " + phone;
 
-  addressBook[addressBook.length] = contact;
-  window.localStorage.setItem("contacts", JSON.stringify(addressBook));
+  const formData = new FormData(e.target);
+  const newContact = Object.assign(Object.fromEntries(formData), {
+    isFavorite: false,
+    isInEdit: false,
+  });
+  contacts = contacts.concat(newContact);
 
-  console.log(addressBook);
-
+  persistData();
+  e.target.reset();
   render();
-  document.querySelector("#name").value = "";
-  document.querySelector("#phone").value = "";
 });
 
-document.querySelector("#app").addEventListener("click", (e) => {
-  //console.dir(e.target);
-  if (e.target.className === "delete") {
-    let newArray = JSON.parse(window.localStorage.getItem("contacts"));
-    newArray.splice(e.target.id, 1);
-    addressBook = newArray;
-    window.localStorage.setItem("contacts", JSON.stringify(newArray));
-    render();
-  } else if (e.target.className === "favorite") {
-    let id = e.target.id;
+window.addEventListener("DOMContentLoaded", () => {
+  const persistedData = window.localStorage.getItem(addressContacts);
 
-    document.querySelectorAll("li").forEach((e) => {
-      if (e.id === "addedToFav" && id === e.firstElementChild.id) {
-        e.id = "";
-      } else if (id === e.firstElementChild.id) {
-        e.id = "addedToFav";
-      }
-    });
+  if (persistedData) {
+    contacts = JSON.parse(persistedData);
+    render();
   }
 });

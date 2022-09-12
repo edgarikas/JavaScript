@@ -6,27 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.scss" />
     <link rel="stylesheet" href="styles/reset.css" />
+    <script src="./script.js" defer></script>
     <title>Document</title>
   </head>
   <body>
     <main id="app">
-      <h1>Adding and Editing List</h1>
-      <form id="address-book-inputs">
+      <form id="new-address">
+        <h1>Adding & Editing Address Book</h1>
         <div>
-          <label for="name">Full Name</label>
-          <input type="text" name="name" id="name" required />
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" />
         </div>
-
         <div>
           <label for="phone">Phone</label>
-          <input type="phone" name="phone" id="phone" required />
+          <input type="tel" id="phone" name="phone" maxlength="14" />
         </div>
-
-        <button type="submit" class="btn add">ADD</button>
+        <button type="submit">Save</button>
       </form>
 
-      <div class="container"></div>
+      <div class="address--book">
+        <div class="address--book__title">
+            <h2 id="title--name">Name</h2>
+            <h2 id="title-phone">Phone</h2>
+            <input id="search" type="text" placeholder="Search" />
+          </div>
+        </div>
+      </div>
     </main>
-    <script src="./script.js"></script>
   </body>
 </html>
