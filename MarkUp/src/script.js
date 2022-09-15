@@ -621,3 +621,54 @@ const obj1 = objArray.reduce(
 );
 
 */
+
+function evenOrOdd(number) {
+  if (isNaN(number)) {
+    return NaN;
+  }
+  return number % 2 === 0 ? "Even" : "Odd";
+}
+
+function reverse(word) {
+  word = word.toString();
+  let wordCopy = word.split("");
+  let result = "";
+  wordCopy.forEach((e, i) => {
+    let x = word.charAt(e);
+    for (let y = 0; y < i; y++) {
+      result += e;
+    }
+    result += " - ";
+  });
+  return result;
+}
+
+let sk = ["2", "1", "a", "5.14324", false];
+
+function getN(numbers) {
+  return numbers.map((e) => Number(e));
+}
+
+let data = [1, 2, "c", "g", 3, "d", false, true, 10];
+
+function filter(array, type) {
+  return array.filter((entry) => typeof entry === type);
+}
+
+function pluck(objList, key) {
+  // return objList.map((obj) => obj[key]).filter((e) => Boolean);
+  return objList.reduce((result, obj) => {
+    return obj[key] ? result.concat(obj[key]) : result;
+  }, []);
+}
+
+const blockedWords = [
+  "African",
+  "Roman Tufted",
+  "Toulouse",
+  "Pilgrim",
+  "Steinbacher",
+];
+function removeBlockedWords(wordList) {
+  return wordList.filter((word) => !blockedWords.includes(word));
+}
