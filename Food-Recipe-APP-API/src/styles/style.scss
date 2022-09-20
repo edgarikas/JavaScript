@@ -153,6 +153,10 @@ body {
   border-radius: 2rem;
 }
 
+.meal-details::-webkit-scrollbar-track:hover {
+  background: white;
+}
+
 .showRecipe {
   display: block;
 }
