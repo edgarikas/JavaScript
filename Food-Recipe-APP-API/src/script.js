@@ -5,17 +5,6 @@ searchBtn.addEventListener("click", () => {
   document.querySelector("#search-input").value = "";
 });
 
-//Need to solve it...
-document.querySelector(".meal-wrapper").addEventListener("click", (e) => {
-  getMealRecipe(e);
-  console.log(e.target);
-  if (e.target.className === "recipe-close-btn btn") {
-    document
-      .querySelector(".meal-details-content")
-      .parentElement.classList.remove(`showRecipe`);
-  }
-});
-
 window.addEventListener("DOMContentLoaded", () => {
   let mealResult = document.createElement("div");
   mealResult.classList = "meal-result";
@@ -29,8 +18,6 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function renderList(meal) {
-  const id = "meal";
-
   let mealItems = document.createElement("div");
   mealItems.classList = "meal-items";
   document.querySelector("#meal").append(mealItems);
@@ -88,6 +75,10 @@ function getMealList() {
         data.meals.forEach((meal) => {
           renderList(meal);
         });
+        document.querySelector("#meal").addEventListener("click", (e) => {
+          //console.log(e.target.id);
+          getMealRecipe(e);
+        });
       }
     })
     .catch((error) => {
@@ -125,7 +116,8 @@ function renderMealInstruction(meal) {
   recipeInstruction.classList = "recipe-instruct";
 
   let h3 = document.createElement("h3");
-  h3.textContent = "Instructions: ";
+  h3.textContent = "Instruction: ";
+  h3.id = "Instruction";
   let description = document.createElement("p");
   description.textContent = `${meal.strInstructions}`;
   recipeInstruction.append(h3, description);
@@ -157,6 +149,12 @@ function renderMealInstruction(meal) {
   document.querySelector(".meal-wrapper").append(mealDetails);
 
   mealDetails.classList.add(`showRecipe`);
+
+  document.querySelector(".recipe-close-btn").addEventListener("click", (e) => {
+    document
+      .querySelector(".meal-details-content")
+      .parentElement.classList.remove(`showRecipe`);
+  });
 }
 
 function getMealRecipe(e) {
@@ -166,6 +164,7 @@ function getMealRecipe(e) {
     if (document.querySelector(".meal-details")) {
       document.querySelector(".meal-details").remove();
     }
+
     // console.log(e.target.id);
     fetch(`https://themealdb.com/api/json/v1/1/lookup.php?i=${e.target.id}`)
       .then((response) => response.json())
