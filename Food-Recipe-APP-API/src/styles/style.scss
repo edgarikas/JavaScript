@@ -153,6 +153,11 @@ body {
   width: 90%;
 }
 
+.container::-webkit-scrollbar-thumb {
+  background: red;
+  color: greenyellow;
+}
+
 .meal-details::-webkit-scrollbar {
   width: 1vw;
 }
