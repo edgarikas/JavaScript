@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/style.scss" />
+    <title>Trello</title>
+  </head>
+  <body>
+    <div class="app">
+      <div class="boards">
+        <div class="boards__item">
+          <div class="card-header">
+            <span contenteditable="true" class="title">Card Name</span>
+            <div class="delete">X</div>
+          </div>
+          <div class="list">
+            <div draggable="true" class="list__item">Starting Card</div>
+          </div>
+
+          <div class="form">
+            <textarea class="textarea" placeholder="Enter Card Name"></textarea>
+            <div class="buttons">
+              <button class="add__item-btn">Add Card</button>
+              <button class="cancel__item-btn">Cancel</button>
+            </div>
+          </div>
+
+          <div class="add__btn"><span>+ Add Card</span></div>
+        </div>
+      </div>
+
+      <div class="button">Add New Board</div>
+    </div>
+    <script src="./script.js" defer></script>
+  </body>
+</html>
