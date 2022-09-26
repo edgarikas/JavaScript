@@ -73,6 +73,9 @@ title:focus {
 }
 
 .list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: #fefefe;
   border-radius: 3px;
   text-align: center;
@@ -84,8 +87,18 @@ title:focus {
   border: none;
 }
 
-.list-rotate {
-  transform: rotate(3deg);
+.list__delete {
+  align-items: center;
+  background: rgba(70, 67, 67, 0.3);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  font-size: 13px;
+  font-weight: 700;
+  height: 1rem;
+  justify-content: center;
+  width: 1rem;
 }
 
 .form {
@@ -144,19 +157,16 @@ title:focus {
 .add__btn {
   height: 30px;
   background: rgba(155, 155, 155, 0.3);
+  border: none;
   border-radius: 3px;
   margin-top: 5px;
-  display: flex;
   font-size: 12px;
-  align-items: center;
   padding-left: 10px;
   color: white;
   cursor: pointer;
-  span {
-    font-size: 16px;
-    margin-right: 10px;
-    color: white;
-  }
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
 }
 
 .button {
@@ -185,7 +195,7 @@ title:focus {
   background: rgba(70, 67, 67, 0.1);
 }
 
-@media screen and (min-width: 150px) {
+@media screen and (min-width: 50px) {
   .boards {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
