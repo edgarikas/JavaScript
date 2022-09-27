@@ -25,13 +25,6 @@ function addBoard() {
   liItem.classList = "list__item";
   liItem.textContent = "";
 
-  const p = document.createElement("p");
-  p.textContent = "Starting card";
-  const delL = document.createElement("button");
-  delL.textContent = "X";
-  delL.classList = "list__delete";
-  liItem.append(p, delL);
-
   const f = document.createElement("div");
   f.classList = "form";
   const textA = document.createElement("textarea");
@@ -54,7 +47,7 @@ function addBoard() {
 
   buttons.append(add, cancel);
   f.append(textA, buttons);
-  li.append(liItem);
+
   board.append(cHeader, li, f, addCard);
   boards.append(board);
 
