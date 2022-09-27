@@ -21,6 +21,7 @@ function addBoard() {
   li.classList = "list";
   const liItem = document.createElement("div");
   liItem.draggable = "true";
+  liItem.id = "start";
   liItem.classList = "list__item";
   liItem.textContent = "";
 
@@ -81,6 +82,7 @@ function addBoard() {
     let list = li;
     const newItem = document.createElement("div");
     newItem.classList = "list__item";
+    newItem.id = value;
     newItem.draggable = "true";
     //newItem.textContent = value;
 
@@ -132,6 +134,7 @@ function removeCard() {
 function dragAndDrop() {
   const lists = document.querySelectorAll(".list");
   const listItems = document.querySelectorAll(".list__item");
+  let certainPoint = "";
 
   for (let i = 0; i < listItems.length; i++) {
     const item = listItems[i];
@@ -139,15 +142,12 @@ function dragAndDrop() {
     item.addEventListener("dragstart", () => {
       dragedItem = item;
 
-      console.log(`Item -> `, item);
-      console.log("Draged Item -> ", dragedItem);
-
       setTimeout(() => {
         item.style.display = " none";
       }, 0);
     });
 
-    item.addEventListener("dragend", () => {
+    item.addEventListener("dragend", (e) => {
       setTimeout(() => {
         item.style.display = "flex";
         dragedItem = null;
@@ -156,7 +156,6 @@ function dragAndDrop() {
 
     item.addEventListener("click", (e) => {
       //remove
-      console.log(e.target.className);
       if (e.target.className === "list__delete") {
         item.remove();
       }
@@ -166,22 +165,28 @@ function dragAndDrop() {
       const list = lists[j];
       list.addEventListener("dragover", (e) => {
         e.preventDefault();
+        certainPoint = e.target.id;
       });
       list.addEventListener("dragenter", function (e) {
         e.preventDefault();
+        let target = document.getElementById(certainPoint);
         this.style.backgroundColor = "rgba(0,0,0, .3)";
-        this.style.paddingBottom = "2.5rem";
       });
       list.addEventListener("dragleave", function (e) {
         e.preventDefault();
         this.style.backgroundColor = "rgba(0,0,0, 0)";
-        this.style.paddingBottom = "0";
       });
       list.addEventListener("drop", function (e) {
         this.style.backgroundColor = "rgba(0,0,0, 0)";
-        this.style.paddingBottom = "0";
 
         this.append(dragedItem);
+        let target = document.getElementById(certainPoint);
+
+        if (target === null) {
+          this.append(dragedItem);
+        } else {
+          target.after(dragedItem);
+        }
       });
     }
   }
